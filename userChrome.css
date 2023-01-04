@@ -1,0 +1,31 @@
+/*
+ * Reference: https://www.reddit.com/r/FirefoxCSS/comments/boetx7/annoying_page_jump_with_address_bar_autohide/engne27/
+ */
+/* Hide Tabbar until mouse is around it */
+
+/*#TabsToolbar:not([customizing="true"]):not([inFullscreen]){
+    height: 1px !important;
+    transition: all 50ms ease 0s !important;
+}
+#TabsToolbar:hover:not([inFullscreen]),
+#TabsToolbar:focus-within{
+    height: auto !important; /* 29px compact, 33px normal, YMMV ///
+    transition: all 50ms ease 0s !important;
+}*/
+/* Hide nav-bar until mouse hovers */
+#nav-bar:not([customizing="true"]):not([inFullscreen]){
+    height: 1px !important;
+    min-height: 1px !important;
+    transition: all 5s ease 0s !important;
+    overflow: hidden;
+    z-index: -5 !important;
+}
+#nav-bar:hover, #navigator-toolbox:hover:not([inFullscreen]) > #nav-bar,
+#navigator-toolbox:focus-within > #nav-bar{
+    position: relative;
+    height: auto !important;
+    bottom: 0px;
+    transition: all 50ms ease 0s !important;
+    z-index: 5 !important;
+}
+
